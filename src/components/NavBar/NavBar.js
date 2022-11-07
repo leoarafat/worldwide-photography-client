@@ -48,9 +48,9 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
           <CameraIcon className="h-6 w-6 text-blue-500" />
-          AP Photography
+          Wild Photography
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -66,13 +66,13 @@ const NavBar = () => {
       <div className="navbar-end">
         {user?.uid || user?.email ? (
           <>
-        <p>{user?.email}</p>
+        <p>{user}</p>
             <button className="btn btn-ghost" onClick={handleLogOut}>
               Logout
             </button>
           </>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link className="btn btn-outline btn-primary" to="/login">Login</Link>
         )}
       </div>
     </div>
@@ -80,21 +80,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-{
-  /* <p>
-<Link className="btn">
-  <p>User</p>
-</Link>
-</p>
-
-<p>
-{user?.uid || user.photoURL ? (
-  <button className="btn btn-ghost" onClick={handleLogOut}>
-    Logout
-  </button>
-) : (
-  <Link to="/login">Login</Link>
-)}
-</p> */
-}
