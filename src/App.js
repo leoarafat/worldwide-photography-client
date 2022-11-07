@@ -4,7 +4,7 @@ import { router } from "./components/Routes/Router";
 
 function App() {
   return (
-    <div className="App">
+    <div data-theme="cupcake" className="max-w-7xl mx-auto px-3">
 <RouterProvider router={router}></RouterProvider>
     </div>
   );
