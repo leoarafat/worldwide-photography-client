@@ -4,12 +4,18 @@ import { CameraIcon } from "@heroicons/react/24/solid";
 import { userContext } from "../AuthProvider/AuthContext";
 
 const NavBar = () => {
-  const { user } = useContext(userContext);
+  const { user, logOut } = useContext(userContext);
 
-  const handleLogOut = () =>{
+  const handleLogOut = () => {
+    logOut()
+    .then(()=>{
 
-  }
-
+    })
+    .catch(error =>{
+        console.log(error);
+    })
+  };
+  
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -58,22 +64,37 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <p>
-          <Link className="btn">
-            <p>User</p>
-          </Link>
-        </p>
-
-        <p>
-          {user?.uid ? (
-            <Link to="/login">Login</Link>
-          ) : (
-            <button className="btn btn-ghost" onClick={handleLogOut}>Logout</button>
-          )}
-        </p>
+        {user?.uid || user?.email ? (
+          <>
+        <p>{user?.email}</p>
+            <button className="btn btn-ghost" onClick={handleLogOut}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </div>
     </div>
   );
 };
 
 export default NavBar;
+
+{
+  /* <p>
+<Link className="btn">
+  <p>User</p>
+</Link>
+</p>
+
+<p>
+{user?.uid || user.photoURL ? (
+  <button className="btn btn-ghost" onClick={handleLogOut}>
+    Logout
+  </button>
+) : (
+  <Link to="/login">Login</Link>
+)}
+</p> */
+}
