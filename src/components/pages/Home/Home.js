@@ -5,8 +5,8 @@ import Getup from "./Getup";
 import Header from "./Header";
 import HomeSummery from "./HomeSummery";
 
-import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
+// import { PhotoProvider, PhotoView } from "react-photo-view";
+// import "react-photo-view/dist/react-photo-view.css";
 
 const Home = () => {
   const services = useLoaderData();
@@ -24,7 +24,10 @@ const Home = () => {
         <button className="btn btn-outline w-[200px]">See all</button>
       </Link>
 
-      <Banner />
+      <div className="">
+        <p className="text-center text-xl my-3 bg-warning w-[300px] mx-auto p-3 rounded">Popular destination</p>
+        <Banner />
+      </div>
 
       <Getup />
     </div>

@@ -49,9 +49,10 @@ const Register = () => {
           Email
         </label>
         <input
-          id="username"
+          id="email"
           name="email"
-          type="text"
+          type="email"
+          required
           className="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2 dark:text-gray-900 focus:dark:border-violet-400 focus:ring-violet-400"
         />
         <label for="password" className="self-start mt-3 text-xs font-semibold">
@@ -61,6 +62,7 @@ const Register = () => {
           id="password"
           type="password"
           name="password"
+          required
           className="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2 dark:text-gray-900 focus:dark:border-violet-400 focus:ring-violet-400"
         />
         

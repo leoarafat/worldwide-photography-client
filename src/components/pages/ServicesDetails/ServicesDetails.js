@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { userContext } from "../../AuthProvider/AuthContext";
 import UserReview from "../UserReview/UserReview";
 
-
 const ServicesDetails = () => {
-  const [review, setReview] = useState([])
+  const [review, setReview] = useState([]);
   const serviceDetail = useLoaderData();
+  const { user } = useContext(userContext);
   const { _id, img, camera, details, location, price, service_name, title } =
     serviceDetail;
-    
-    console.log(review)
-    
-    useEffect(()=>{
-        fetch('http://localhost:5000/feedback')
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data)
-            setReview(data)
-            
-        } )
-    },[])
+
+  // console.log(review)
+
+  useEffect(() => {
+    fetch("http://localhost:5000/feedback")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data)
+        setReview(data);
+      });
+  }, []);
 
   return (
     <div className="md:grid grid-cols-2">
@@ -36,9 +36,9 @@ const ServicesDetails = () => {
             <p>{camera}</p>
             <p>Cost: {price}$</p>
             <div className="card-actions justify-end">
-             <Link to="/home">
-             <button className="btn btn-primary">Back to home</button>
-             </Link>
+              <Link to="/home">
+                <button className="btn btn-primary">Back to home</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -46,12 +46,26 @@ const ServicesDetails = () => {
 
       <div>
         <div>
-
-{review.map(rev => <UserReview rev={rev}/> )}
+          {review.map((rev) => (
+            <UserReview rev={rev} />
+          ))}
         </div>
-    <Link to={`/review/${_id}`} className="flex justify-center my-3">
-    <button className="btn btn-warning">Please leave a feedback or review</button>
-    </Link>
+        {user ? (
+          <>
+            <Link to={`/review/${_id}`} className="flex justify-center my-3">
+              <button className="btn btn-warning">Please leave a review</button>
+            </Link>
+          </>
+        ) : (
+          <div className="w-[300px] mx-auto">
+            <Link
+              to={`/review/${_id}`}
+              className="flex justify-center my-3 btn btn-warning"
+            >
+              Please Login to add a review
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { userContext } from "../../AuthProvider/AuthContext";
 
 const AddReview = () => {
+  const {user} = useContext(userContext)
   // const [feedback, setFeedback] = useState({})
-  // const [service] = useLoaderData();
-  // console.log(service)
+  const [service] = useLoaderData();
+  console.log(service)
   
-  // const { _id, price } = service;
-  // console.log(_id,price);
+  const { _id } = service;
+  // console.log(_id);
 
 
   const handleFeedback = (e) => {
@@ -18,7 +20,6 @@ const AddReview = () => {
     const photo = form.photoURL.value;
     const feedback = form.feedback.value;
     const review = {
-    
       name,
       photo,
       feedback,
@@ -60,6 +61,21 @@ const AddReview = () => {
                     placeholder="Your name"
                     className="input input-bordered"
                     name="name"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    className="input input-bordered"
+                    name="email"
+                    defaultValue={user?.email}
+                    required
+                    readOnly
                   />
                 </div>
                 <div className="form-control">
@@ -71,6 +87,7 @@ const AddReview = () => {
                     placeholder="PhotoURL"
                     className="input input-bordered"
                     name="photoURL"
+                    required
                   />
                 </div>
                 <div className="form-control">
@@ -81,6 +98,7 @@ const AddReview = () => {
                     className="textarea textarea-bordered h-24"
                     placeholder="Leave a feedback"
                     name="feedback"
+                    required
                   ></textarea>
                   <label className="label"></label>
                 </div>

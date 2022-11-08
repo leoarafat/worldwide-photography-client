@@ -61,10 +61,11 @@ const Login = () => {
             Email
           </label>
           <input
-            type="text"
+            type="email"
             name="email"
-            id="username"
+            id="email"
             placeholder="Username"
+            required
             className="w-full px-4 py-3 rounded-md  dark:bg-gray-200 dark:text-dark focus:dark:border-violet-400"
           />
         </div>
@@ -77,6 +78,7 @@ const Login = () => {
             name="password"
             id="password"
             placeholder="Password"
+            required
             className="w-full px-4 py-3 rounded-md dark:bg-gray-200 dark:text-dark focus:dark:border-violet-400"
           />
           <div className="flex justify-end text-xs dark:text-gray-400">
