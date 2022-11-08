@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import HomeSummery from './HomeSummery';
 
 const Home = () => {
+const services = useLoaderData()
+// console.log(service)
+
+    
     return (
         <div>
             {/* header */}
@@ -19,6 +24,12 @@ const Home = () => {
 	<img src="https://images.unsplash.com/photo-1554844453-7ea2a562a6c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="" className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500" />
 </section>
             {/* header */}
+            {/* home summeryCard */}
+            {
+                services.map(service => <HomeSummery service={service}/>)
+            }
+            <button>See all..</button>
+            {/* home summeryCard */}
             {/* Banner section */}
             <div className="carousel w-full">
   <div id="item1" className="carousel-item w-full">
@@ -48,7 +59,7 @@ const Home = () => {
 	<div className="flex items-center mx-auto container justify-center md:justify-between py-2">
 		<div>
 			<span>Get up to 50% off your first order + free shipping,&nbsp;</span>
-			<Link href="#" rel="noopener noreferrer" className="underline">sign up</Link>today!
+			<Link to="/register" className="underline">sign up</Link>today!
 		</div>
 		<Link href="#" rel="noopener noreferrer" className="items-center gap-2 hidden md:flex">
 			<svg role="img" viewBox="0 0 22 22" className="fill-current h-4 w-4">
