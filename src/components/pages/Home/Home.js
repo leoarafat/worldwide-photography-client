@@ -8,19 +8,19 @@ import HomeSummery from "./HomeSummery";
 
 const Home = () => {
   const services = useLoaderData();
-  // console.log(service)
 
   return (
     <div>
       <Header />
-
-      <div className="md:grid grid-cols-2 lg:grid-cols-3">
+      <p className="text-4xl text-center my-3 text-danger">My Service</p>
+      <div className="md:grid grid-cols-2 lg:grid-cols-3 text-center">
         {services.map((service) => (
           <HomeSummery service={service} />
         ))}
       </div>
-      <Link className="flex justify-center my-5"><button className="btn btn-outline w-[200px]">See all</button></Link>
-      
+      <Link to={"/myServices"} className="flex justify-center my-5">
+        <button className="btn btn-outline w-[200px]">See all</button>
+      </Link>
 
       <Banner />
 

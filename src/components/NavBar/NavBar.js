@@ -42,8 +42,14 @@ const NavBar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/service">Service</Link>
+              <Link to="/service">Services</Link>
             </li>
+            <li>
+            <Link to="/review">Add Review</Link>
+          </li>
+          {/* <li>
+            <Link to="/myServices">My Services</Link>
+          </li> */}
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
@@ -57,8 +63,14 @@ const NavBar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/service">Service</Link>
+            <Link to="/service">Services</Link>
           </li>
+          <li>
+            <Link to="/review">Add Review</Link>
+          </li>
+          {/* <li>
+            <Link>My Services</Link>
+          </li> */}
         </ul>
       </div>
       <div className="navbar-end">

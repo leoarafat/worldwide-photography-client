@@ -1,9 +1,7 @@
 import React from "react";
 
-const HomeSummery = ({ service }) => {
-    const {service_name, img} = service
-  // console.log(service);
-
+const MyServiceSummery = ({service}) => {
+    const { service_name, img } = service
   return (
     <div>
       <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto my-2">
@@ -12,7 +10,7 @@ const HomeSummery = ({ service }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{service_name}</h2>
-          
+
           <div className="card-actions justify-end">
             <button className="btn btn-primary">Details...</button>
           </div>
@@ -22,4 +20,4 @@ const HomeSummery = ({ service }) => {
   );
 };
 
-export default HomeSummery;
+export default MyServiceSummery;

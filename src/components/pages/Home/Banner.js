@@ -6,29 +6,29 @@ const Banner = () => {
                   <div className="carousel w-full">
         <div id="item1" className="carousel-item w-full">
           <img
-            src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            className="w-full"
+            src="https://images.unsplash.com/photo-1558951407-61704cdb0460?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+            className="w-full  h-[600px]"
             alt=""
           />
         </div>
         <div id="item2" className="carousel-item w-full">
           <img
-            src="https://images.unsplash.com/photo-1520390138845-fd2d229dd553?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
-            className="w-full"
+            src="https://images.unsplash.com/photo-1533396371595-d46b0aa39bd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80"
+            className="w-full  h-[600px]"
             alt=""
           />
         </div>
         <div id="item3" className="carousel-item w-full">
           <img
-            src="https://images.unsplash.com/uploads/141219324227007364f95/be0967a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            className="w-full"
+            src="https://images.unsplash.com/photo-1575380591643-b2c92368dc6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1162&q=80"
+            className="w-full  h-[600px]"
             alt=""
           />
         </div>
         <div id="item4" className="carousel-item w-full">
           <img
-            src="https://images.unsplash.com/photo-1420136663600-498c31ee1c97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            className="w-full"
+            src="https://images.unsplash.com/photo-1569317002804-ab77bcf1bce4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            className="w-full h-[600px]"
             alt=""
           />
         </div>
