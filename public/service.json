@@ -1,0 +1,56 @@
+[
+    {
+        "service_name": "Wild Photography",
+        "img": "https://images.unsplash.com/photo-1657527630422-0cc8497b2e15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "details": "Wildlife photography is a genre of photography that records the life of animals in their natural settings, like in a forest or underwater. So, wildlife photography often constitutes the images of animals in movement or action such as eating, fighting, or in flight. It also covers various organisms, including mammals, insects, plants, reptiles, rodents, and other invertebrates. Alternatively, it may also record the in-depth details of an animal’s appearance or its presence with its environment. Therefore, as an aspiring wildlife photographer, you require a sound knowledge of an animal’s behavior, habitat, and anatomical features. In addition, you have to be proficient in advanced photographic techniques and must be skilled in using various photography equipment.",
+        "title": "Cute Birds",
+        "camera": "Canon, EOS RP",
+        "location": "Punit Van, Road Number 4B, Sector 18, Gandhinagar, Gujarat, India",
+        "price": "5000"
+    },
+    {
+        "service_name": "Wedding Photography",
+        "img": "https://images.unsplash.com/flagged/photo-1552981941-424aac2b4311?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=437&q=80",
+        "details": "Wedding photography is a specialty in photography that is primarily focused on the photography of events and activities relating to weddings. It may include other types of portrait photography of the couple before the official wedding day, such as a pre-wedding engagement session",
+        "title": "New married cutest couple",
+        "camera": "Canon, EOS 5D Mark III",
+        "location": "Dhaka, Bangladesh",
+        "price": "2500"
+    },
+    {
+        "service_name": "Sports Photography",
+        "img": "https://images.unsplash.com/photo-1628779238951-be2c9f2a59f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "details": "Sports photography is a type of photography that covers every sport and sporting event, capturing the action of a game and behind the scenes of the players. This type of photography helps to promote brands, the players, as well as the sport.Sports photography refers to the genre of photography that covers all types of sports. In the majority of cases, professional sports photography is a branch of photojournalism, while amateur sports photography, such as photos of children playing association football, is a branch of vernacular photography.",
+        "title": "Playing BasketBall",
+        "camera": "Canon, EOS 5D MRK IV",
+        "location": "San Francisco, CA, USA",
+        "price": "4400"
+    },
+    {
+        "service_name": "Fashion Photography",
+        "img": "https://images.unsplash.com/photo-1545296593-4f1259273322?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=457&q=80",
+        "details": "Fashion photography focuses on the display of fashion clothing and items. It is most common on advertising boards and in fashion magazines. The photography will usually feature models wearing the display items. Fashion photography has existed almost as long as photography itself has been around.Fashion photography is a genre of photography which is devoted to displaying clothing and other fashion items. Fashion photography is most often conducted for advertisements or fashion magazines such as Vogue, Vanity Fair, or Elle.",
+        "title": "Egypt's Female Model",
+        "camera": "Canon, EOS 5D Mark",
+        "location": "Cairo, Egypt",
+        "price": "1200"
+    },
+    {
+        "service_name": "Food photography",
+        "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+        "details": "hamburger, also called burger, ground beef. The term is applied variously to (1) a patty of ground beef, sometimes called hamburg steak, Salisbury steak, or Vienna steak, (2) a sandwich consisting of a patty of ground beef served within a split bread roll, with various garnishes, or (3) the ground beef itself, which is used as a base in many sauces, casseroles, terrines, and the like.The origin of hamburger is unknown, but the hamburger patty and sandwich were probably brought by 19th-century German immigrants to the United States, where in a matter of decades the hamburger came to be considered an archetypal American food. ",
+        "title": "Burger Meal",
+        "camera": "Canon, EOS 6D",
+        "location": "Mae, Winnipeg , Canada",
+        "price": "275"
+    },
+    {
+        "service_name": "Street photography",
+        "img": "https://images.unsplash.com/photo-1587303643465-55484e80e4ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80",
+        "details": "street photography, a genre of photography that records everyday life in a public place. The very publicness of the setting enables the photographer to take candid pictures of strangers, often without their knowledge. Street photographers do not necessarily have a social purpose in mind, but they prefer to isolate and capture moments which might otherwise go unnoticed.",
+        "title": "A man is waking",
+        "camera": "Canon, EOS 6D",
+        "location": "Ofelia Plads, Kvæsthusbroen, København, Danmark",
+        "price": "499"
+    }
+]

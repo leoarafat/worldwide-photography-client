@@ -88,7 +88,10 @@ const Login = () => {
       </form>
       <div>
         <p className="text-warning">
-          {error} {success}
+          {error} 
+        </p>
+        <p className="text-success">
+        {success}
         </p>
       </div>
       <div className="flex items-center pt-4 space-x-1">

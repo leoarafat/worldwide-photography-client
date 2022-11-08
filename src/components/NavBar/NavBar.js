@@ -8,14 +8,12 @@ const NavBar = () => {
 
   const handleLogOut = () => {
     logOut()
-    .then(()=>{
-
-    })
-    .catch(error =>{
+      .then(() => {})
+      .catch((error) => {
         console.log(error);
-    })
+      });
   };
-  
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -41,7 +39,7 @@ const NavBar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to="/register">Register</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/service">Service</Link>
@@ -50,13 +48,13 @@ const NavBar = () => {
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           <CameraIcon className="h-6 w-6 text-blue-500" />
-          Wild Photography
+          AP Photography
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <Link to="/register">Register</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/service">Service</Link>
@@ -66,14 +64,18 @@ const NavBar = () => {
       <div className="navbar-end">
         {user?.uid || user?.email ? (
           <>
-        <p>{user}</p>
             <button className="btn btn-ghost" onClick={handleLogOut}>
               Logout
             </button>
           </>
         ) : (
-          <Link className="btn btn-outline btn-primary" to="/login">Login</Link>
+          <Link className="btn btn-outline btn-primary" to="/login">
+            Login
+          </Link>
         )}
+       
+          <Link className="btn btn-outline btn-secondary ml-1" to="/register">Register</Link>
+      
       </div>
     </div>
   );

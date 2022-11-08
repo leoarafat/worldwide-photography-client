@@ -71,6 +71,7 @@ const Register = () => {
           Register
         </button>
         <p className="text-warning">{error}</p>
+        <p className="text-success">{success}</p>
         <div className="flex justify-center mt-6 space-x-2 text-xs">
           
           <p className="dark:text-gray-400">
