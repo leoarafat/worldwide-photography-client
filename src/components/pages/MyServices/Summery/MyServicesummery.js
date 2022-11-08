@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import 'react-photo-view/dist/react-photo-view.css';
+import "react-photo-view/dist/react-photo-view.css";
 import { Link } from "react-router-dom";
 
-
 const MyServiceSummery = ({ service }) => {
+
+
   const { _id, service_name, img, price, details } = service;
   return (
     <div>
@@ -20,15 +21,15 @@ const MyServiceSummery = ({ service }) => {
           <h2 className="card-title">{service_name}</h2>
           <h5 className="text-xl">Price {price}$</h5>
           <>
-            {details.length > 100 ? (
+            {details ? (
               <> {details.slice(0, 100) + "..."} </>
             ) : (
               details
             )}
           </>
           <div className="card-actions justify-end">
-            <Link>
-            <button className="btn btn-primary">Details...</button>
+            <Link to={`/services/${_id}`}>
+              <button className="btn btn-primary">Details...</button>
             </Link>
           </div>
         </div>
@@ -39,6 +40,4 @@ const MyServiceSummery = ({ service }) => {
 
 export default MyServiceSummery;
 
-{
-  /* <img className="h-[450px] w-[100%]" src={img} alt="Shoes" /> */
-}
+

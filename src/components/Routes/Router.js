@@ -13,17 +13,17 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 export const router = createBrowserRouter([
   {
     path: "/",
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     element: <Main />,
     children: [
       {
         path: "/",
-        loader: ()=> fetch('http://localhost:5000/service'),
+        loader: () => fetch("http://localhost:5000/service"),
         element: <Home />,
       },
       {
         path: "/home",
-        loader: ()=> fetch('http://localhost:5000/service'),
+        loader: () => fetch("http://localhost:5000/service"),
         element: <Home />,
       },
       {
@@ -44,15 +44,22 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myServices",
-        loader: ()=> fetch('http://localhost:5000/allService'),
-        element: <MyServices/>
+        loader: () => fetch("http://localhost:5000/allService"),
+        element: <MyServices />,
       },
       {
-        path: "/review", element: <AddReview/>
+        path: "/review/:id",
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/allService/${params.id}`),
+
+        element: <AddReview />,
       },
       {
-        path: '/services/:id', element: <ServicesDetails/>
-      }
+        path: "/services/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allService/${params.id}`),
+        element: <ServicesDetails />,
+      },
     ],
   },
 ]);
