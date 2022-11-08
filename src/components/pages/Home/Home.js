@@ -2,9 +2,11 @@ import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
 import Getup from "./Getup";
-
 import Header from "./Header";
 import HomeSummery from "./HomeSummery";
+
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const Home = () => {
   const services = useLoaderData();
