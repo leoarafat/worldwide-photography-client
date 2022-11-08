@@ -1,25 +1,29 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { userContext } from "../../AuthProvider/AuthContext";
+import DetailReview from "../UserReview/DetailReview";
 import UserReview from "../UserReview/UserReview";
 
+
 const ServicesDetails = () => {
-  const [review, setReview] = useState([]);
+  // const [review, setReview] = useState([]);
   const serviceDetail = useLoaderData();
+  const [userRev, setUserRev] = useState([])
   const { user } = useContext(userContext);
   const { _id, img, camera, details, location, price, service_name, title } =
     serviceDetail;
 
-  // console.log(review)
+    useEffect(()=>{
+      fetch(`http://localhost:5000/feedback/${_id}`)
+      .then(res => res.json())
+      .then(data =>{
+        console.log(data)
+        setUserRev(data)
+        
+      })
+    },[_id])
 
-  useEffect(() => {
-    fetch("http://localhost:5000/feedback")
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data)
-        setReview(data);
-      });
-  }, []);
+
 
   return (
     <div className="md:grid grid-cols-2">
@@ -46,9 +50,17 @@ const ServicesDetails = () => {
 
       <div>
         <div>
-          {review.map((rev) => (
-            <UserReview rev={rev} />
-          ))}
+          {/* <UserReview/> */}
+          {
+            // userRev.map(rev => {
+            //   return (
+            //     <div>
+            //       <p>{rev.name}</p>
+            //     </div>
+            //   )
+            // })
+            userRev.map(review => <DetailReview review={review} /> )
+          }
         </div>
         {user ? (
           <>

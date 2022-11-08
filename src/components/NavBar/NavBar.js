@@ -44,9 +44,9 @@ const NavBar = () => {
             <li>
               <Link to="/service">Services</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/review">Add Review</Link>
-            </li>
+            </li> */}
             {user?.email && (
               <>
                 <li>
@@ -72,9 +72,9 @@ const NavBar = () => {
           <li>
             <Link to="/service">Services</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/review">Add Review</Link>
-          </li>
+          </li> */}
           {user?.email && (
             <>
               <li>
@@ -100,9 +100,9 @@ const NavBar = () => {
           </Link>
         )}
 
-        <Link className="btn btn-outline btn-secondary ml-1" to="/register">
+        {/* <Link className="btn btn-outline btn-secondary ml-1" to="/register">
           Register
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

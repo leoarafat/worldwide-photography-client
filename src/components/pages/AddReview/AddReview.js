@@ -5,21 +5,21 @@ import { userContext } from "../../AuthProvider/AuthContext";
 const AddReview = () => {
   const {user} = useContext(userContext)
   // const [feedback, setFeedback] = useState({})
-  const [service] = useLoaderData();
-  console.log(service)
+  const {_id} = useLoaderData();
+  // console.log(_id)
   
-  const { _id } = service;
-  // console.log(_id);
-
 
   const handleFeedback = (e) => {
     e.preventDefault();
 
     const form = e.target;
     const name = form.name.value;
+    const email = user?.email || 'Unregistered'
     const photo = form.photoURL.value;
     const feedback = form.feedback.value;
     const review = {
+      service: _id,
+      email,
       name,
       photo,
       feedback,
@@ -66,7 +66,7 @@ const AddReview = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Name</span>
+                    <span className="label-text">Email</span>
                   </label>
                   <input
                     type="email"
