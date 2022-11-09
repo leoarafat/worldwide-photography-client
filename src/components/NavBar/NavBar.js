@@ -42,11 +42,8 @@ const NavBar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/service">Services</Link>
+              <Link to="/allService">All Service</Link>
             </li>
-            {/* <li>
-              <Link to="/review">Add Review</Link>
-            </li> */}
             {user?.email && (
               <>
                 <li>
@@ -70,11 +67,8 @@ const NavBar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/service">Services</Link>
+            <Link to="/allService">All Service</Link>
           </li>
-          {/* <li>
-            <Link to="/review">Add Review</Link>
-          </li> */}
           {user?.email && (
             <>
               <li>

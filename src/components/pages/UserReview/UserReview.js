@@ -33,9 +33,9 @@ const UserReview = ({ reviewed, handleDelete }) => {
           </p>
         </div>
       </div>
+      :
     </div>
   );
 };
 
 export default UserReview;
-
