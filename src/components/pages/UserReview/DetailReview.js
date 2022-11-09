@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { TrashIcon, DocumentChartBarIcon } from "@heroicons/react/24/solid";
 
-const DetailReview = ({ review }) => {
+const DetailReview = ({ review, handleDelete }) => {
   const { _id, feedback, photo, name, service, email } = review;
-//   const [review, setReview] = useState([]);
-
-//   useEffect(() => {
-//     fetch(`http://localhost:5000/allService/${service}`)
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setReview(data);
-//         console.log(data);
-//       });
-//   }, [service]);
-
-
-
-
   
 
   return (
@@ -36,7 +22,7 @@ const DetailReview = ({ review }) => {
         </div>
       </div>
       <div className="flex justify-between my-3">
-        <p >
+        <p onClick={() => handleDelete(_id)}>
           <TrashIcon className="w-6 h-6 text-red-500" />
         </p>
 
@@ -49,5 +35,3 @@ const DetailReview = ({ review }) => {
 };
 
 export default DetailReview;
-// onClick={()=>handleDelete(_id)}
-// onClick={()=>handleUpdate(rev)}

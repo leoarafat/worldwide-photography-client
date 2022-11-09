@@ -29,14 +29,7 @@ export const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/service"),
         element: <Home />,
       },
-      {
-        path: "/service",
-        element: (
-          <PrivateRoutes>
-            <Services />
-          </PrivateRoutes>
-        ),
-      },
+
       {
         path: "/login",
         element: <Login />,
@@ -61,14 +54,7 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
       },
-      // {
-      //   path: "/review",
-      //   element: (
-      //     <PrivateRoutes>
-      //       <AddReview />
-      //     </PrivateRoutes>
-      //   ),
-      // },
+
       {
         path: "/services/:id",
         loader: ({ params }) =>
@@ -80,6 +66,7 @@ export const router = createBrowserRouter([
         loader: ()=> fetch('http://localhost:5000/feedback'),
         element: <MyReviews />,
       },
+     
       {
         path: "/addService",
         element: <AddService />,
