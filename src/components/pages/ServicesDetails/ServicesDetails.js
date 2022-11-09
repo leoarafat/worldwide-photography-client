@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { userContext } from "../../AuthProvider/AuthContext";
+import useTitle from "../../Hooks/useTitle";
 import DetailReview from "../UserReview/DetailReview";
 
-
 const ServicesDetails = () => {
+  useTitle('service_details')
   // const [review, setReview] = useState([]);
   const serviceDetail = useLoaderData();
   const [userRev, setUserRev] = useState([]);
@@ -12,6 +13,14 @@ const ServicesDetails = () => {
   const { _id, img, camera, details, location, price, service_name, title } =
     serviceDetail;
 
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/feedback/${_id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setUserRev(data);
+  //     });
+  // }, [_id]);
   useEffect(() => {
     fetch(`http://localhost:5000/feedback/${_id}`)
       .then((res) => res.json())
@@ -21,7 +30,7 @@ const ServicesDetails = () => {
       });
   }, [_id]);
 
-   const handleDelete = (id) => {
+  const handleDelete = (id) => {
     const agree = window.confirm("Are you sure to delete this item?");
     if (agree) {
       fetch(`http://localhost:5000/feedback/${id}`, {

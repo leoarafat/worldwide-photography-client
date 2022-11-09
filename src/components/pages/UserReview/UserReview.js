@@ -1,8 +1,10 @@
 import React from "react";
 
 import { TrashIcon, DocumentChartBarIcon } from "@heroicons/react/24/solid";
+import useTitle from "../../Hooks/useTitle";
 
 const UserReview = ({ reviewed, handleDelete }) => {
+  useTitle('userReview')
   // console.log(reviewed);
   const { _id, email, feedback, name, photo } = reviewed;
 

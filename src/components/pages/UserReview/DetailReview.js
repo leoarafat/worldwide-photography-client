@@ -1,9 +1,10 @@
 import React from "react";
 import { TrashIcon, DocumentChartBarIcon } from "@heroicons/react/24/solid";
+import useTitle from "../../Hooks/useTitle";
 
 const DetailReview = ({ review, handleDelete }) => {
   const { _id, feedback, photo, name, service, email } = review;
-  
+  useTitle('user_review')
 
   return (
     <div className="p-[15px] sm:p-12 dark:bg-gray-900 dark:text-gray-100 my-2 rounded w-[400px] mx-auto">

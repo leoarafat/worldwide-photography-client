@@ -1,8 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { userContext } from "../../AuthProvider/AuthContext";
+import useTitle from "../../Hooks/useTitle";
+// import swal from "sweetalert";
 
 const Login = () => {
+  useTitle('login')
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const { logIn, logInWithGoogle } = useContext(userContext);
@@ -18,11 +21,34 @@ const Login = () => {
     logIn(email, password)
       .then((res) => {
         const user = res.user;
-        form.reset();
-        navigate(from, { replace: true });
+        // form.reset();
+        const currentUser ={
+          email: user.email
+        }
+        // console.log(currentUser)
+        
+        fetch('http://localhost:5000/jwt',{
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(currentUser)
+        })
+        .then(res => res.json())
+        .then(data =>{
+          localStorage.setItem('token', data.token)
+          // console.log(data)
+          navigate(from, { replace: true });
         setError("");
+        // swal("Register successful!", "You can visit now!", "success");
         setSuccess("Successfully logged in");
-        console.log(user);
+
+        })
+        // navigate(from, { replace: true });
+        // setError("");
+        // // swal("Register successful!", "You can visit now!", "success");
+        // setSuccess("Successfully logged in");
+        // console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -35,7 +61,8 @@ const Login = () => {
     logInWithGoogle()
     .then(res =>{
         const user = res.user;
-        console.log(user)
+        // console.log(user)
+        // swal("Register successful!", "You can visit now!", "success");
         navigate(from, { replace: true });
         
     })

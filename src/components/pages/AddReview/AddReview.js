@@ -1,20 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { userContext } from "../../AuthProvider/AuthContext";
+import useTitle from "../../Hooks/useTitle";
 
 const AddReview = () => {
-  const {user} = useContext(userContext)
-  // const [feedback, setFeedback] = useState({})
-  const {_id} = useLoaderData();
+  const { user } = useContext(userContext);
+  const [feedback, setFeedback] = useState([]);
+  const { _id } = useLoaderData();
+  useTitle('addReview')
   // console.log(_id)
-  
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/feedback?email=${user?.email}`,{
+      headers:{
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setFeedback(data);
+      });
+  }, [user?.email]);
+
 
   const handleFeedback = (e) => {
     e.preventDefault();
 
     const form = e.target;
     const name = form.name.value;
-    const email = user?.email || 'Unregistered'
+    const email = user?.email || "Unregistered";
     const photo = form.photoURL.value;
     const feedback = form.feedback.value;
     const review = {
@@ -28,14 +42,15 @@ const AddReview = () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
+         
       },
       body: JSON.stringify(review),
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.acknowledged){
-          alert('review successful')
-          form.reset()
+        if (data.acknowledged) {
+          alert("review successful");
+          form.reset();
         }
       });
   };

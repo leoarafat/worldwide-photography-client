@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../Hooks/useTitle';
 
 const Footer = () => {
+	
     return (
 <footer  className=" ">
 	<div className="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-400">

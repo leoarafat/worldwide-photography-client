@@ -1,8 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import MyServiceSummery from "../MyServices/Summery/MyServiceSummery";
 
 const AllService = () => {
+    useTitle('allService')
   const services = useLoaderData();
   return (
     <div>

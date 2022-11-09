@@ -3,6 +3,7 @@ import Main from "../Layouts/Main/Main";
 import AddReview from "../pages/AddReview/AddReview";
 import AddService from "../pages/AddService/AddService";
 import AllService from "../pages/AllService/AllService";
+import Blog from "../pages/Blog/Blog";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
@@ -83,8 +84,12 @@ export const router = createBrowserRouter([
       {
         path: "/allService",
         loader: () => fetch("http://localhost:5000/allService"),
-         element: <AllService/>
-      }
+        element: <AllService />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
     ],
   },
 ]);

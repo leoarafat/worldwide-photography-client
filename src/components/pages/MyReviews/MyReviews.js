@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import UserReview from "../UserReview/UserReview";
 
 const MyReviews = () => {
+    useTitle('review')
   const [review, setReview] = useState([]);
   const serviceReview = useLoaderData();
   // const {_id} = serviceReview[0]
@@ -41,11 +43,12 @@ const MyReviews = () => {
           <UserReview handleDelete={handleDelete} reviewed={review} />
         ))
       ) : (
-<div className="flex flex-col justify-center items-center">
-
-<p className="text-center text-5xl text-red-800 my-2">No reviews were added</p>
-<progress className="progress w-56"></progress>
-</div>
+        <div className="flex flex-col justify-center items-center">
+          <p className="text-center text-5xl text-red-800 my-2">
+            No reviews were added
+          </p>
+          <progress className="progress w-56"></progress>
+        </div>
       )}
     </div>
   );

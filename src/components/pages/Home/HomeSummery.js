@@ -2,10 +2,11 @@ import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 const HomeSummery = ({ service }) => {
   const { _id, service_name, img, price, details } = service;
   // console.log(service);
-
+useTitle('services')
   return (
     <div>
       <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto my-2">

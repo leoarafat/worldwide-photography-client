@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import Banner from "./Banner";
 import Getup from "./Getup";
 import Header from "./Header";
@@ -9,6 +10,7 @@ import HomeSummery from "./HomeSummery";
 // import "react-photo-view/dist/react-photo-view.css";
 
 const Home = () => {
+  useTitle('home')
   const services = useLoaderData();
 
   return (
@@ -25,7 +27,9 @@ const Home = () => {
       </Link>
 
       <div className="">
-        <p className="text-center text-xl my-3 bg-warning w-[300px] mx-auto p-3 rounded">Popular destination</p>
+        <p className="text-center text-xl my-3 bg-warning w-[300px] mx-auto p-3 rounded">
+          Popular destination
+        </p>
         <Banner />
       </div>
 

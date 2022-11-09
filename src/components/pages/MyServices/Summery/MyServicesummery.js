@@ -2,10 +2,10 @@ import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { Link } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 
 const MyServiceSummery = ({ service }) => {
-
-
+  useTitle('services')
   const { _id, service_name, img, price, details } = service;
   return (
     <div>
@@ -20,19 +20,12 @@ const MyServiceSummery = ({ service }) => {
         <div className="card-body">
           <h2 className="card-title">{service_name}</h2>
           <h5 className="text-xl">Price {price}$</h5>
-          <>
-            {details ? (
-              <> {details.slice(0, 100) + "..."} </>
-            ) : (
-              details
-            )}
-          </>
+          <>{details ? <> {details.slice(0, 100) + "..."} </> : details}</>
           <div className="card-actions justify-end">
             <Link to={`/services/${_id}`}>
               <button className="btn btn-primary">Details...</button>
             </Link>
           </div>
-          
         </div>
       </div>
     </div>
@@ -40,5 +33,3 @@ const MyServiceSummery = ({ service }) => {
 };
 
 export default MyServiceSummery;
-
-

@@ -1,6 +1,10 @@
 import React from "react";
+import useTitle from "../../Hooks/useTitle";
 
 const AddService = () => {
+
+  useTitle('addService')
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
