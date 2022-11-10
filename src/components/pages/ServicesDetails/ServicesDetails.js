@@ -1,10 +1,9 @@
-
-
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { userContext } from "../../AuthProvider/AuthContext";
 import useTitle from "../../Hooks/useTitle";
 import DetailReview from "../UserReview/DetailReview";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import {
   MapPinIcon,
   CameraIcon,
@@ -12,30 +11,28 @@ import {
 } from "@heroicons/react/24/solid";
 import toast from "react-hot-toast";
 
-
 const ServicesDetails = () => {
   useTitle("service_details");
 
   const serviceDetail = useLoaderData();
-  console.log(serviceDetail)
-  
+  console.log(serviceDetail);
+
   const [userRev, setUserRev] = useState([]);
-  console.log(userRev)
-  
+  console.log(userRev);
+
   //new new]
   // const [review, setReview] = useState({});
   const { user } = useContext(userContext);
-  const { _id, img, camera, details, location, price, service_name, title } = serviceDetail;
-  console.log(serviceDetail)
-  
+  const { _id, img, camera, details, location, price, service_name, title } =
+    serviceDetail;
+  console.log(serviceDetail);
 
   useEffect(() => {
     fetch(`https://assignment-11-server-iota.vercel.app/feedback/${_id}`)
       .then((res) => res.json())
       .then((data) => {
         // setUserRev(data);
-        console.log(data)
-        
+        console.log(data);
       });
   }, [_id]);
 
@@ -44,7 +41,6 @@ const ServicesDetails = () => {
     if (agree) {
       fetch(`https://assignment-11-server-iota.vercel.app/feedback/${id}`, {
         method: "DELETE",
-        
       })
         .then((res) => res.json())
         .then((data) => {
@@ -74,12 +70,12 @@ const ServicesDetails = () => {
       photo,
       feedback,
     };
-    console.log(review)
-    
+    console.log(review);
+
     fetch("https://assignment-11-server-iota.vercel.app/feedback", {
       method: "POST",
-      headers:{
-        'content-type': 'application/json'
+      headers: {
+        "content-type": "application/json",
       },
       body: JSON.stringify(review),
     })
@@ -100,7 +96,12 @@ const ServicesDetails = () => {
       <div>
         <div className="card  bg-base-100 shadow-xl">
           <figure>
-            <img className="w-full h-[450px]" src={img} alt="Album" />
+
+            <PhotoProvider>
+            <PhotoView src={img}>
+              <img className="h-[450px] w-[100%]" src={img} alt="" />
+            </PhotoView>
+          </PhotoProvider>
           </figure>
           <div className="card-body">
             <h2 className="card-title text-purple-600">{service_name}</h2>
@@ -134,11 +135,7 @@ const ServicesDetails = () => {
         <p className="text-center text-4xl my-4">User Review..</p>
         <div>
           {userRev.map((review) => (
-            <DetailReview
-        
-              handleDelete={handleDelete}
-              review={review}
-            />
+            <DetailReview handleDelete={handleDelete} review={review} />
           ))}
         </div>
 
