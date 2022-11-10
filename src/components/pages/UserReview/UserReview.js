@@ -1,12 +1,15 @@
 import React from "react";
 
-import { TrashIcon, DocumentChartBarIcon } from "@heroicons/react/24/solid";
+import { TrashIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid";
 import useTitle from "../../Hooks/useTitle";
+import { Link } from "react-router-dom";
 
 const UserReview = ({ reviewed, handleDelete }) => {
   useTitle('userReview')
   // console.log(reviewed);
-  const { _id, email, feedback, name, photo } = reviewed;
+  const { _id, email, feedback, name, service, photo, time } = reviewed;
+  // console.log(time)
+  
 
   return (
     <div>
@@ -22,18 +25,22 @@ const UserReview = ({ reviewed, handleDelete }) => {
               {name}
             </h4>
             <p className="text-center">{email}</p>
+
             <p className="dark:text-gray-400 text-center">{feedback}</p>
           </div>
         </div>
         <div className="flex justify-between my-3">
-          <p onClick={() => handleDelete(_id)}>
+          <p onClick={()=>handleDelete(_id)}>
             <TrashIcon className="w-6 h-6 text-red-500" />
           </p>
 
-          <p>
-            <DocumentChartBarIcon className="w-6 h-6 text-green-300" />
-          </p>
+          <Link to={`/update/${service}`}>
+            <button>
+            <AdjustmentsHorizontalIcon  className="w-6 h-6 text-green-300" />
+            </button>
+          </Link>
         </div>
+        <p className="text-red-600 text-center">Date&Time: {new Date(time).toLocaleString()}</p>
       </div>
       :
     </div>

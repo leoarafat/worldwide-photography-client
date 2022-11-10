@@ -1,45 +1,63 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+
+import { userContext } from "../../AuthProvider/AuthContext";
 import useTitle from "../../Hooks/useTitle";
 import UserReview from "../UserReview/UserReview";
-
+import toast from "react-hot-toast";
 const MyReviews = () => {
     useTitle('review')
-  const [review, setReview] = useState([]);
-  const serviceReview = useLoaderData();
-  // const {_id} = serviceReview[0]
-  // console.log(_id)
+  const [reviewed, setReviewed] = useState([]);
+  // console.log(reviewed)
+  const {user,logOut} = useContext(userContext)
+  
 
-  // useEffect(() => {
-  //     fetch(`http://localhost:5000/feedback/${_id}`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //         setReview(data);
-  //       });
-  //   }, [_id]);
+  useEffect(() => {
+      fetch(`https://assignment-11-server-iota.vercel.app/feedback?email=${user?.email}`,{
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('genius-token')}`
+      }
+      })
+        // .then((res) => res.json())
+
+        .then((res) => {
+          if (res.status === 401 || res.status === 403) {
+            return logOut();
+        }
+        return res.json();
+        })
+        .then((data) => {
+          // console.log(data);
+          setReviewed(data);
+        });
+    }, [user?.email,logOut]);
 
   const handleDelete = (id) => {
     const agree = window.confirm("Are you sure to delete this item?");
     if (agree) {
-      fetch(`http://localhost:5000/feedback/${id}`, {
+      fetch(`https://assignment-11-server-iota.vercel.app/feedback/${id}`, {
         method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('genius-token')}`
+      }
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            alert("deleted successfully");
-            const remaining = review.filter((rev) => rev._id !== id);
-            setReview(remaining);
+            // alert("deleted successfully");
+            toast.success('Delete Successful!')
+            const remaining = reviewed.filter((rev) => rev._id !== id);
+            setReviewed(remaining);
           }
         });
     }
   };
+
+
   return (
-    <div>
-      {serviceReview.length > 0 ? (
-        serviceReview.map((review) => (
+    <div className="">
+      {reviewed.length > 0 ? (
+        reviewed.map((review) => (
           <UserReview handleDelete={handleDelete} reviewed={review} />
         ))
       ) : (

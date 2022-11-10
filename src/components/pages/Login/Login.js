@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import { userContext } from "../../AuthProvider/AuthContext";
 import useTitle from "../../Hooks/useTitle";
-// import swal from "sweetalert";
+
 
 const Login = () => {
   useTitle('login')
@@ -27,7 +28,7 @@ const Login = () => {
         }
         // console.log(currentUser)
         
-        fetch('http://localhost:5000/jwt',{
+        fetch('https://assignment-11-server-iota.vercel.app/jwt',{
           method: 'POST',
           headers: {
             'content-type': 'application/json'
@@ -40,8 +41,9 @@ const Login = () => {
           // console.log(data)
           navigate(from, { replace: true });
         setError("");
-        // swal("Register successful!", "You can visit now!", "success");
-        setSuccess("Successfully logged in");
+        toast.success('Successfully Login!')
+        // setSuccess("Successfully logged in");
+       
 
         })
         // navigate(from, { replace: true });
@@ -61,8 +63,7 @@ const Login = () => {
     logInWithGoogle()
     .then(res =>{
         const user = res.user;
-        // console.log(user)
-        // swal("Register successful!", "You can visit now!", "success");
+        toast.success('Successfully Login!')
         navigate(from, { replace: true });
         
     })

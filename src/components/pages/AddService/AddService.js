@@ -1,6 +1,6 @@
 import React from "react";
 import useTitle from "../../Hooks/useTitle";
-
+import toast from "react-hot-toast";
 const AddService = () => {
 
   useTitle('addService')
@@ -24,7 +24,7 @@ const AddService = () => {
       location
 
     };
-    fetch("http://localhost:5000/addService", {
+    fetch("https://assignment-11-server-iota.vercel.app/addService", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -34,7 +34,7 @@ const AddService = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("review successful");
+          toast.success('Service added successfully!')
           form.reset();
         }
       });
