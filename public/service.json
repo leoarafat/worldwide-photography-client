@@ -9,15 +9,6 @@
         "price": "5000"
     },
     {
-        "service_name": "Wedding Photography",
-        "img": "https://images.unsplash.com/flagged/photo-1552981941-424aac2b4311?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=437&q=80",
-        "details": "Wedding photography is a specialty in photography that is primarily focused on the photography of events and activities relating to weddings. It may include other types of portrait photography of the couple before the official wedding day, such as a pre-wedding engagement session",
-        "title": "New married cutest couple",
-        "camera": "Canon, EOS 5D Mark III",
-        "location": "Dhaka, Bangladesh",
-        "price": "2500"
-    },
-    {
         "service_name": "Sports Photography",
         "img": "https://images.unsplash.com/photo-1628779238951-be2c9f2a59f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         "details": "Sports photography is a type of photography that covers every sport and sporting event, capturing the action of a game and behind the scenes of the players. This type of photography helps to promote brands, the players, as well as the sport.Sports photography refers to the genre of photography that covers all types of sports. In the majority of cases, professional sports photography is a branch of photojournalism, while amateur sports photography, such as photos of children playing association football, is a branch of vernacular photography.",
@@ -52,5 +43,14 @@
         "camera": "Canon, EOS 6D",
         "location": "Ofelia Plads, Kvæsthusbroen, København, Danmark",
         "price": "499"
+    },
+    {
+        "service_name": "Wedding Photography",
+        "img": "https://images.unsplash.com/flagged/photo-1552981941-424aac2b4311?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=437&q=80",
+        "details": "Wedding photography, a genre of photography that records everyday life in a public place. The very publicness of the setting enables the photographer to take candid pictures of strangers, often without their knowledge. Street photographers do not necessarily have a social purpose in mind, but they prefer to isolate and capture moments which might otherwise go unnoticed.",
+        "title": "New married cutest couple",
+        "camera": "Canon, EOS 5D Mark III",
+        "location":"Dhaka, Bangladesh",
+        "price": "2900"
     }
 ]

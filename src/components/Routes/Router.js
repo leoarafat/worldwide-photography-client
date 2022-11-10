@@ -66,15 +66,7 @@ export const router = createBrowserRouter([
           fetch(`https://assignment-11-server-iota.vercel.app/allService/${params.id}`),
         element: <ServicesDetails />,
       },
-      // {
-      //   path: "/myReview/:id",
-      //   loader: ({params}) => fetch(`https://assignment-11-server-iota.vercel.app/feedback/${params.id}`),
-      //   element: (
-      //     <PrivateRoutes>
-      //       <MyReviews />
-      //     </PrivateRoutes>
-      //   ),
-      // },
+
       {
         path: "/myReview",
         loader: () => fetch("https://assignment-11-server-iota.vercel.app/feedback"),
@@ -90,10 +82,10 @@ export const router = createBrowserRouter([
         path: "/addService",
         element: <AddService />,
       },
-      {
-        path: "/userReview",
-        element: <UserReview />,
-      },
+      // {
+      //   path: "/userReview",
+      //   element: <UserReview />,
+      // },
       {
         path: "/allService",
         loader: () => fetch("https://assignment-11-server-iota.vercel.app/allService"),
@@ -103,11 +95,7 @@ export const router = createBrowserRouter([
         path: "/blog",
         element: <Blog />,
       },
-      {
-        path: "/update/:id",
-        loader: ({params})=> fetch(`https://assignment-11-server-iota.vercel.app/feedback/${params.id}`),
-         element: <Update/>
-      },
+     
       {
         path: "/about", element: <About/>
       },

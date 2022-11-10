@@ -23,35 +23,30 @@ const Login = () => {
     logIn(email, password)
       .then((res) => {
         const user = res.user;
+        // navigate(from, { replace: true });
+        // setError("");
+        // toast.success('Successfully Login!')
         // form.reset();
         const currentUser ={
           email: user.email
         }
         // console.log(currentUser)
         
-        // fetch('https://assignment-11-server-iota.vercel.app/jwt',{
-        //   method: 'POST',
-        //   headers: {
-        //     'content-type': 'application/json'
-        //   },
-        //   body: JSON.stringify(currentUser)
-        // })
-        // .then(res => res.json())
-        // .then(data =>{
-        //   localStorage.setItem('token', data.token)
-        //   // console.log(data)
-        //   navigate(from, { replace: true });
-        // setError("");
-        // toast.success('Successfully Login!')
-        // // setSuccess("Successfully logged in");
-       
-
-        // })
-        // navigate(from, { replace: true });
-        // setError("");
-        // // swal("Register successful!", "You can visit now!", "success");
-        // setSuccess("Successfully logged in");
-        // console.log(user);
+        fetch('https://assignment-11-server-iota.vercel.app/jwt',{
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(currentUser)
+        })
+        .then(res => res.json())
+        .then(data =>{
+          localStorage.setItem('token', data.token)
+          // console.log(data)
+          navigate(from, { replace: true });
+        setError("");
+        toast.success('Successfully Login!')
+        })
       })
       .catch((error) => {
         const errorCode = error.code;

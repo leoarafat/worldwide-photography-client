@@ -1,13 +1,16 @@
-
-
 import React from "react";
-import { TrashIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid";
+import {
+  TrashIcon,
+  AdjustmentsHorizontalIcon,
+} from "@heroicons/react/24/solid";
 import useTitle from "../../Hooks/useTitle";
 import { Link } from "react-router-dom";
 
-const DetailReview = ({ myReview, handleDelete, serviceName }) => {
-  const { _id, feedback, photo, name, service, email, time } = myReview;
-  useTitle('user_review')
+const DetailReview = ({ rev, handleDelete, serviceName }) => {
+  console.log(rev);
+
+  const { _id, feedback, photo, name, service, email, time } = rev;
+  useTitle("user_review");
 
   return (
     <div className="p-[15px] sm:p-12 dark:bg-gray-900 dark:text-gray-100 my-2 rounded w-[400px] mx-auto">
@@ -23,7 +26,7 @@ const DetailReview = ({ myReview, handleDelete, serviceName }) => {
             {name}
           </h4>
           <p className="text-center">{email}</p>
-          
+
           <p className="dark:text-gray-400 text-center">{feedback}</p>
         </div>
       </div>
@@ -32,13 +35,13 @@ const DetailReview = ({ myReview, handleDelete, serviceName }) => {
           <TrashIcon className="w-6 h-6 text-red-500" />
         </p>
 
-        <Link to={`/update/${service}`}>
-            <button>
-            <AdjustmentsHorizontalIcon  className="w-6 h-6 text-green-300" />
-            </button>
-          </Link>
+        <button>
+          <AdjustmentsHorizontalIcon className="w-6 h-6 text-green-300" />
+        </button>
       </div>
-      <p className="text-center text-red-600">Time: {new Date(time).toLocaleTimeString()}</p>
+      <p className="text-center text-red-600">
+        Time: {new Date(time).toLocaleTimeString()}
+      </p>
     </div>
   );
 };
