@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { userContext } from "../../AuthProvider/AuthContext";
 import useTitle from "../../Hooks/useTitle";
-
+import toast from "react-hot-toast";
 const Register = () => {
   useTitle('register')
   const [error, setError] = useState("");
@@ -20,13 +20,15 @@ const Register = () => {
         const user = res.user;
         form.reset()
         setError('')
-        setSuccess('Successfully registered')
+        // setSuccess('Successfully registered')
+        toast.success('Successfully Register!')
         console.log(user);
       })
       .catch((err) => {
         const errorCode = err.code;
         const errorMessage = err.message;
         setError(errorCode, errorMessage);
+        toast.error(errorMessage)
       });
   };
 

@@ -26,7 +26,7 @@ const Header = () => {
                 type="button"
                 className="px-8 py-3 m-2 text-lg border rounded dark:border-gray-700 dark:text-gray-900"
               >
-                About us
+                About me
               </button>
             </div>
           </div>

@@ -31,7 +31,7 @@ const UserReview = ({ review, handleDelete }) => {
             <p className="dark:text-gray-400 text-center">{feedback}</p>
           </div>
         </div>
-        <div className="flex justify-between my-3">
+        {/* <div className="flex justify-between my-3">
           <p onClick={() => handleDelete(_id)}>
             <TrashIcon className="w-6 h-6 text-red-500" />
           </p>
@@ -39,7 +39,7 @@ const UserReview = ({ review, handleDelete }) => {
           <button>
             <AdjustmentsHorizontalIcon className="w-6 h-6 text-green-300" />
           </button>
-        </div>
+        </div> */}
         <p className="text-red-600 text-center">
           Date&Time: {new Date(time).toLocaleString()}
         </p>

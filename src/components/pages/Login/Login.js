@@ -52,6 +52,7 @@ const Login = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setError(errorCode, errorMessage);
+        toast.error(errorMessage)
       });
   };
 

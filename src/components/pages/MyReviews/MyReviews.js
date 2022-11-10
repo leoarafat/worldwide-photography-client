@@ -11,7 +11,7 @@ const MyReviews = () => {
     useTitle('review')
     
   const [reviewed, setReviewed] = useState([]);
-  console.log(reviewed)
+  // console.log(reviewed)
   const {user} = useContext(userContext)
   
 
