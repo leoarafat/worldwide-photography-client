@@ -1,3 +1,4 @@
+
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -28,24 +29,24 @@ const Login = () => {
         }
         // console.log(currentUser)
         
-        fetch('https://assignment-11-server-iota.vercel.app/jwt',{
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify(currentUser)
-        })
-        .then(res => res.json())
-        .then(data =>{
-          localStorage.setItem('token', data.token)
-          // console.log(data)
-          navigate(from, { replace: true });
-        setError("");
-        toast.success('Successfully Login!')
-        // setSuccess("Successfully logged in");
+        // fetch('https://assignment-11-server-iota.vercel.app/jwt',{
+        //   method: 'POST',
+        //   headers: {
+        //     'content-type': 'application/json'
+        //   },
+        //   body: JSON.stringify(currentUser)
+        // })
+        // .then(res => res.json())
+        // .then(data =>{
+        //   localStorage.setItem('token', data.token)
+        //   // console.log(data)
+        //   navigate(from, { replace: true });
+        // setError("");
+        // toast.success('Successfully Login!')
+        // // setSuccess("Successfully logged in");
        
 
-        })
+        // })
         // navigate(from, { replace: true });
         // setError("");
         // // swal("Register successful!", "You can visit now!", "success");

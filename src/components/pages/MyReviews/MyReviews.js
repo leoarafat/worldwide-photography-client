@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect, useState } from "react";
 
 import { userContext } from "../../AuthProvider/AuthContext";
@@ -7,38 +8,27 @@ import toast from "react-hot-toast";
 const MyReviews = () => {
     useTitle('review')
   const [reviewed, setReviewed] = useState([]);
-  // console.log(reviewed)
+  console.log(reviewed)
   const {user,logOut} = useContext(userContext)
   
 
   useEffect(() => {
-      fetch(`https://assignment-11-server-iota.vercel.app/feedback?email=${user?.email}`,{
-        headers: {
-          authorization: `Bearer ${localStorage.getItem('genius-token')}`
-      }
-      })
+      fetch(`https://assignment-11-server-iota.vercel.app/feedback?email=${user?.email}`)
         // .then((res) => res.json())
 
-        .then((res) => {
-          if (res.status === 401 || res.status === 403) {
-            return logOut();
-        }
-        return res.json();
-        })
+        .then((res) => res.json())
         .then((data) => {
           // console.log(data);
           setReviewed(data);
         });
-    }, [user?.email,logOut]);
+    }, [user?.email,]);
 
   const handleDelete = (id) => {
     const agree = window.confirm("Are you sure to delete this item?");
     if (agree) {
       fetch(`https://assignment-11-server-iota.vercel.app/feedback/${id}`, {
         method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem('genius-token')}`
-      }
+    
       })
         .then((res) => res.json())
         .then((data) => {
@@ -58,7 +48,7 @@ const MyReviews = () => {
     <div className="">
       {reviewed.length > 0 ? (
         reviewed.map((review) => (
-          <UserReview handleDelete={handleDelete} reviewed={review} />
+          <UserReview handleDelete={handleDelete} myReview={review} />
         ))
       ) : (
         <div className="flex flex-col justify-center items-center">
