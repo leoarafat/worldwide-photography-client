@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   TrashIcon,
   AdjustmentsHorizontalIcon,
 } from "@heroicons/react/24/solid";
 import useTitle from "../../Hooks/useTitle";
-import { Link } from "react-router-dom";
+
 
 const DetailReview = ({ rev, handleDelete, serviceName }) => {
   console.log(rev);
+
+  
 
   const { _id, feedback, photo, name, service, email, time } = rev;
   useTitle("user_review");
@@ -34,10 +36,11 @@ const DetailReview = ({ rev, handleDelete, serviceName }) => {
         <p onClick={() => handleDelete(_id)}>
           <TrashIcon className="w-6 h-6 text-red-500" />
         </p>
-
-        <button>
-          <AdjustmentsHorizontalIcon className="w-6 h-6 text-green-300" />
-        </button>
+       
+          <button>
+            <AdjustmentsHorizontalIcon className="w-6 h-6 text-green-300" />
+          </button>
+     
       </div>
       <p className="text-center text-red-600">
         Time: {new Date(time).toLocaleTimeString()}

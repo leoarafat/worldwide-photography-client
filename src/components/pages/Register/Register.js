@@ -32,18 +32,10 @@ const Register = () => {
       });
   };
 
-//   const updateUserProfile = (name, photoURL) => {
-//     const profile = {
-//       displayName: name,
-//       photoURL: photoURL,
-//     };
-//     updateUser(profile)
-//       .then(() => {})
-//       .catch((error) => console.error(error));
-//   };
+
 
   return (
-    <div className="flex items-center justify-center text-center bg-slate-800 dark:text-gray-100">
+    <div className="flex items-center justify-center text-center bg-gray-200">
       <form
         onSubmit={handleRegister}
         action=""
@@ -72,7 +64,7 @@ const Register = () => {
         
         <button
           type="submit"
-          className="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
+          className="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded btn-success"
         >
           Register
         </button>

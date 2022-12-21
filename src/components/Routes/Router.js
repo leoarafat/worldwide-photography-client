@@ -76,16 +76,11 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
       },
-      
 
       {
         path: "/addService",
         element: <AddService />,
       },
-      // {
-      //   path: "/userReview",
-      //   element: <UserReview />,
-      // },
       {
         path: "/allService",
         loader: () => fetch("https://assignment-11-server-iota.vercel.app/allService"),

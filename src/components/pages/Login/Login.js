@@ -74,7 +74,7 @@ const Login = () => {
 
 
   return (
-    <div className="w-full mx-auto max-w-md p-8 space-y-3 rounded-xl bg-slate-600 ">
+    <div className="w-full mx-auto max-w-md p-8 space-y-3 rounded-xl bg-gray-200">
       <h1 className="text-2xl font-bold text-center">Login</h1>
       <form
         onSubmit={handleLogIn}
@@ -110,7 +110,7 @@ const Login = () => {
             <Link to="/">Forgot Password?</Link>
           </div>
         </div>
-        <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400">
+        <button className="block w-full p-3 text-center rounded-sm btn-success">
           Sign in
         </button>
       </form>
