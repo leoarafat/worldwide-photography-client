@@ -1,16 +1,10 @@
 import React from "react";
-
-import {
-  TrashIcon,
-  AdjustmentsHorizontalIcon,
-} from "@heroicons/react/24/solid";
 import useTitle from "../../Hooks/useTitle";
-import { Link } from "react-router-dom";
 
 const UserReview = ({ review, handleDelete }) => {
   useTitle("userReview");
   // console.log(reviewed);
-  const { _id, email, feedback, name, service, photo, time } = review;
+  const { email, feedback, name, photo, time } = review;
   // console.log(rev)
 
   return (
@@ -31,15 +25,7 @@ const UserReview = ({ review, handleDelete }) => {
             <p className="dark:text-gray-400 text-center">{feedback}</p>
           </div>
         </div>
-        {/* <div className="flex justify-between my-3">
-          <p onClick={() => handleDelete(_id)}>
-            <TrashIcon className="w-6 h-6 text-red-500" />
-          </p>
 
-          <button>
-            <AdjustmentsHorizontalIcon className="w-6 h-6 text-green-300" />
-          </button>
-        </div> */}
         <p className="text-red-600 text-center">
           Date&Time: {new Date(time).toLocaleString()}
         </p>

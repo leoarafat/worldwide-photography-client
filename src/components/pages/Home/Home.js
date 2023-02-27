@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import{ userContext } from "../../AuthProvider/AuthContext";
 import useTitle from "../../Hooks/useTitle";
+import Loader from "../../Loading/Loader";
 import Banner from "./Banner";
 import Getup from "./Getup";
 import Header from "./Header";
 import HomeSummery from "./HomeSummery";
 
-// import { PhotoProvider, PhotoView } from "react-photo-view";
-// import "react-photo-view/dist/react-photo-view.css";
 
 const Home = () => {
   useTitle('home')
   const services = useLoaderData();
+  const {loading} = useContext(userContext)
+  if(loading){
+    return <Loader/>
+  }
 
   return (
     <div>

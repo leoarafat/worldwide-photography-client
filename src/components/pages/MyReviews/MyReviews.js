@@ -1,31 +1,31 @@
-
 import React, { useContext, useEffect, useState } from "react";
 
 import { userContext } from "../../AuthProvider/AuthContext";
 import useTitle from "../../Hooks/useTitle";
 import UserReview from "../UserReview/UserReview";
 import toast from "react-hot-toast";
-
+import Loader from "../../Loading/Loader";
 
 const MyReviews = () => {
-    useTitle('review')
-    
+  useTitle("review");
+
   const [reviewed, setReviewed] = useState([]);
-  // console.log(reviewed)
-  const {user} = useContext(userContext)
-  
+  const { user } = useContext(userContext);
 
   useEffect(() => {
-      fetch(`https://assignment-11-server-iota.vercel.app/feedback?email=${user?.email}`,{
-        headers:{
-          authorization: `Bearer ${localStorage.getItem('token')}`
-        }
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setReviewed(data);
-        });
-    }, [user?.email,]);
+    fetch(
+      `https://assignment-11-server-iota.vercel.app/feedback?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setReviewed(data);
+      });
+  }, [user?.email]);
 
   const handleDelete = (id) => {
     const agree = window.confirm("Are you sure to delete this item?");
@@ -37,15 +37,13 @@ const MyReviews = () => {
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            // alert("deleted successfully");
-            toast.success('Delete Successful!')
+            toast.success("Delete Successful!");
             const remaining = reviewed.filter((rev) => rev._id !== id);
             setReviewed(remaining);
           }
         });
     }
   };
-
 
   return (
     <div className="">
@@ -58,7 +56,7 @@ const MyReviews = () => {
           <p className="text-center text-5xl text-red-800 my-2">
             No reviews were added
           </p>
-          <progress className="progress w-56"></progress>
+          <Loader/>
         </div>
       )}
     </div>
